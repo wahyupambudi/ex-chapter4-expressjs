@@ -1,9 +1,18 @@
+const {resp} = require("../helper/template.helper")
+
 function TestUser(req, res) {
-  res.json({
-    data: null,
-    message: "Berhasil Masuk User",
-    status: 200,
-  });
+
+  resp.data = null
+  resp.message = "success"
+  resp.status = 200
+
+  res.json(resp)
+
+  // res.json({
+  //   data: null,
+  //   message: "Berhasil Masuk User",
+  //   status: 200,
+  // });
 }
 
 module.exports = {

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const user = require("./user.route");
+const userRoute = require("./user.route");
 
 router.get("/ping", (req, res) => {
 	// console.log(req)
@@ -12,6 +12,6 @@ router.get("/ping", (req, res) => {
 	});
 });
 
-router.use("/user", user);
+router.use("/user", userRoute);
 
 module.exports = router;
