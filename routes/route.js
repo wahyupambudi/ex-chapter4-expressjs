@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const userRoute = require("./user.route");
+const morgan = require("morgan");
+
+router.use(morgan("dev"));
 
 router.get("/ping", (req, res) => {
 	// console.log(req)
-
 	res.json({
 		data: null,
 		message: "PONG",

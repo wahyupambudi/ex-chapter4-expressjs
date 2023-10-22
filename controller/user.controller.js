@@ -1,13 +1,10 @@
-const {resp} = require("../helper/template.helper")
+const { ResponseTemplate } = require("../helper/template.helper");
 
 function TestUser(req, res) {
+  let resp = ResponseTemplate(null, "success", null, 200);
+  res.json(resp);
 
-  resp.data = null
-  resp.message = "success"
-  resp.status = 200
-
-  res.json(resp)
-
+// jika manual
   // res.json({
   //   data: null,
   //   message: "Berhasil Masuk User",
@@ -15,6 +12,17 @@ function TestUser(req, res) {
   // });
 }
 
+function TestUserPost(req, res) {
+  console.log(req.query.name);
+  let objResp = {
+    name: req.body.name,
+    address: req.body.address,
+  };
+  let resp = ResponseTemplate(objResp, "success", null, 200);
+  res.json(resp);
+}
+
 module.exports = {
   TestUser,
+  TestUserPost,
 };
