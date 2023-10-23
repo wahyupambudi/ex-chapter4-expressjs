@@ -8,6 +8,10 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
+
+// ejs
+app.set('view engine', 'ejs')
+
 app.use("/", router);
 
 app.get("/", (req, res) => {
